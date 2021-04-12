@@ -1,0 +1,88 @@
+body {
+  background-color: #999;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  background-color: #676;
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+
+.main {
+  display: flex;
+}
+
+.navigation {
+  width: 250px;
+  background-color: rgb(28, 59, 59);
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+}
+
+.fsre-link {
+  color: blue;
+}
+.exercise{
+  padding-top: 20px;
+  color: blue;
+}
+.table-data, th, td {
+  border: 1px solid black;
+  width: 70%;
+  margin: 50px auto;
+}
+.logo {
+  font-weight: bold;
+  font-size: 45px;
+  margin: auto 15px;
+  color: rgb(79, 35, 155);
+}
+
+.content {
+  height: calc(100vh - 150px);
+  width: calc(100vw - 250px);
+  background-color: #999;
+  text-align: center;
+}
+.content__title {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+
+.footer {
+  background-color: #676;
+  height: 50px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+
+@media all and (max-width: 600px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  .navigation {
+    height: 50px;
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+    justify-content: center;
+  }
+}
