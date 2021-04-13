@@ -13,29 +13,38 @@ body {
   display: flex;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .main {
   display: flex;
 }
 
 .navigation {
-  width: 250px;
-  background-color: rgb(28, 59, 59);
-  height: calc(100vh - 100px);
+  width: 350px;
+  background-color: rgb(67, 107, 107);
+  max-height: calc(100vh - 100px);
+  min-height: 150px;
   display: flex;
   justify-content: center;
+  overflow: auto;
 }
 
 .fsre-link {
   color: blue;
 }
-.exercise{
+.exercise {
   padding-top: 20px;
   color: blue;
 }
-.table-data, th, td {
+.table-data,
+th,
+td {
   border: 1px solid black;
   width: 70%;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 .logo {
   font-weight: bold;
@@ -49,12 +58,12 @@ body {
   width: calc(100vw - 250px);
   background-color: #999;
   text-align: center;
+  overflow: auto;
 }
 .content__title {
   margin-top: 0;
   padding-top: 20px;
 }
-
 
 .footer {
   background-color: #676;
@@ -66,7 +75,6 @@ body {
   justify-content: center;
   padding-top: 20px;
 }
-
 
 @media all and (max-width: 600px) {
   .main {

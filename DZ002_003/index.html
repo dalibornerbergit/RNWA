@@ -4,91 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telecom Ticket System </title>
-
+    <title>Telecom Ticket System</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
-    async function getCategories()
-    {
-      let str = $('#searchInput').val()
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      async function getCategories() {
+        let str = $("#searchInput").val();
 
-      let {data} = await axios.get("categories.php",{params: {s: str}});
-      $('#resultDiv').html(data);
+        let { data } = await axios.get("categories.php", {
+          params: { s: str },
+        });
+        $("#resultDiv").html(data);
+      }
+      $(document).ready(function () {
+        getCategories();
+        let searchInput = $("#searchInput");
 
-    }
-    $(document).ready(function(){
-      getCategories();
-      let searchInput = $('#searchInput')
-
-      searchInput.keyup(async function(){
-        let str = $('#searchInput').val()
-        if(str.length === 0)
-        {
-          $('#txtHint').val('')
-        }else{
-          let {data} = await axios.get("categories_search.php", {params: {s: str}});
-          $('#txtHint').html(data);
-        }
+        searchInput.keyup(async function () {
+          let str = $("#searchInput").val();
+          if (str.length === 0) {
+            $("#txtHint").val("");
+          } else {
+            let { data } = await axios.get("categories_search.php", {
+              params: { s: str },
+            });
+            $("#txtHint").html(data);
+          }
+        });
       });
-    });
-  </script>
+    </script>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body onload="getCategories()">
     <div class="header">
       <span class="logo">TTS</span>
     </div>
     <div class="main">
       <div class="navigation">
-        <article>
-          <div class="articleRight">
-            <p><b>Tipkajte sadržaj objave da vidite prijedloge:</b></p>
-            <div>
-              Sadržaj:
-              <input id="searchInput" type="text" onkeyup="showHint(this.value)" />
-              <button onclick="getCategories()">Get categories</button>
-            </div>
-            <p>
-              Prijedlozi:<br />
-              <span id="txtHint" style="color: red"></span>
-            </p>
+        <div class="articleRight">
+          <p><b>Tipkajte sadržaj objave da vidite prijedloge:</b></p>
+          <div>
+            Sadržaj:
+            <input
+              id="searchInput"
+              type="text"
+              onkeyup="showHint(this.value)"
+            />
+            <button onclick="getCategories()">Get categories</button>
           </div>
-        </article>
-        <a class="exercise" href="https://github.com/dalibornerbergit/RNWA">Vjezbe 1</a>
+          <p>
+            Prijedlozi:<br />
+            <span id="txtHint" style="color: red"></span>
+          </p>
+        </div>
       </div>
       <div>
         <div class="content">
           <h1 class="content__title">Telecom Ticket System</h1>
           <div class="content__text"></div>
-            <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat.</h3>
-            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae nihil vitae omnis,
-            <br>exercitationem porro delectus perspiciatis soluta eveniet accusamus.</h3>
-            <a class="fsre-link" href="http://fsre.sum.ba/naslovnica/">FSRE Naslovnica</a><br>
-            <a class="fsre-link" href="https://www.google.com/">Google</a>
-            <table class="table-data">
-              <tr>
-                <th>Employee</th>
-                <th>Team</th>
-              </tr>
-              <tr>
-                <td>Ante </td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>Dalibor</td>
-                <td>15</td>
-              </tr>
-            </table>
-            <article>
-              <div id="resultDiv"></div>
-            </article>
-          <div class="team">Projektni tim: Ante Antonini i Dalibor Nerber <a href="mailto:anteantonini1@gmail.com">anteantonini1@gmail.com </a></div>
+          <h3>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia,
+            fugiat.
+          </h3>
+          <a class="fsre-link" href="https://github.com/dalibornerbergit/RNWA"
+            >Github</a
+          >
+          <table class="table-data">
+            <tr>
+              <th>Employee</th>
+              <th>Team</th>
+            </tr>
+            <tr>
+              <td>Ante</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Dalibor</td>
+              <td>15</td>
+            </tr>
+          </table>
+          <article>
+            <div id="resultDiv"></div>
+          </article>
+          <br />
+          <div class="team">
+            Projektni tim: <b>Ante Antonini i Dalibor Nerber</b>
+            <br />
+            <a href="mailto:anteantonini1@gmail.com"
+              >anteantonini1@gmail.com
+            </a>
+            <br />
+            <a href="mailto:dalibor.nerber@gmail.com"
+              >dalibor.nerber@gmail.com
+            </a>
+          </div>
+          <br />
         </div>
         <div class="footer">
-          <div class="footer__content" >Telecom Ticket System - 2021</div>
+          <div class="footer__content">Telecom Ticket System - 2021</div>
         </div>
       </div>
     </div>
