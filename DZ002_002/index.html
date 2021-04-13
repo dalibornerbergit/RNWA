@@ -8,28 +8,40 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    async function getCategories()
+    function getCategories()
     {
       let str = $('#searchInput').val()
 
-      let {data} = await axios.get("categories.php",{params: {s: str}});
-      $('#resultDiv').html(data);
-
+      $.ajax({
+        url:"categories.php",
+        method:"GET",
+        data:{s:str},
+        success:function(data)
+        {
+          $('#resultDiv').html(data);
+        }
+      });
     }
     $(document).ready(function(){
       getCategories();
       let searchInput = $('#searchInput')
 
-      searchInput.keyup(async function(){
+      searchInput.keyup(function(){
         let str = $('#searchInput').val()
         if(str.length === 0)
         {
           $('#txtHint').val('')
         }else{
-          let {data} = await axios.get("categories_search.php", {params: {s: str}});
-          $('#txtHint').html(data);
+          $.ajax({
+            url:"categories.php",
+            method:"GET",
+            data:{s:str},
+            success:function(data)
+            {
+              $('#txtHint').html(data);
+            }
+          });
         }
       });
     });
@@ -37,7 +49,7 @@
 
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body onload="getCategories()">
     <div class="header">
       <span class="logo">TTS</span>
     </div>
