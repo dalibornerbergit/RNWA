@@ -17,14 +17,14 @@
 		    </div>
 		   <?php } ?>
 		   <div class="form-group">
-		     <label for="name">Name</label>
-		     <input type="name" 
+		     <label for="username">Username</label>
+		     <input type="username" 
 		           class="form-control" 
-		           id="name" 
-		           name="name" 
-		           value="<?php if(isset($_GET['name']))
-		                           echo($_GET['name']); ?>" 
-		           placeholder="Enter name">
+		           id="username" 
+		           name="username" 
+		           value="<?php if(isset($_GET['username']))
+		                           echo($_GET['username']); ?>" 
+		           placeholder="Enter username">
 		   </div>
 
 		   <div class="form-group">
@@ -36,6 +36,17 @@
 		           value="<?php if(isset($_GET['email']))
 		                           echo($_GET['email']); ?>"
 		           placeholder="Enter email">
+		   </div>
+
+		   <div class="form-group">
+		     <label for="password">Password</label>
+		     <input type="password" 
+		           class="form-control" 
+		           id="password" 
+		           name="password" 
+		           value="<?php if(isset($_GET['password']))
+		                           echo($_GET['password']); ?>"
+		           placeholder="Enter password">
 		   </div>
 
 		   <button type="submit" 

@@ -31,18 +31,18 @@ if (isset($_GET['id'])) {
         return $data;
 	}
 
-	$name = validate($_POST['name']);
+	$username = validate($_POST['username']);
 	$email = validate($_POST['email']);
 	$id = validate($_POST['id']);
 
-	if (empty($name)) {
-		header("Location: ../update.php?id=$id&error=Name is required");
+	if (empty($username)) {
+		header("Location: ../update.php?id=$id&error=Username is required");
 	}else if (empty($email)) {
 		header("Location: ../update.php?id=$id&error=Email is required");
 	}else {
 
        $sql = "UPDATE users
-               SET name='$name', email='$email'
+               SET username='$username', email='$email'
                WHERE id=$id ";
        $result = mysqli_query($conn, $sql);
        if ($result) {

@@ -33,7 +33,7 @@
 			  	 ?>
 			    <tr>
 			      <th scope="row"><?=$i?></th>
-			      <td><?=$rows['name']?></td>
+			      <td><?=$rows['username']?></td>
 			      <td><?php echo $rows['email']; ?></td>
 			      <td><a href="update.php?id=<?=$rows['id']?>" 
 			      	     class="btn btn-success">Update</a>

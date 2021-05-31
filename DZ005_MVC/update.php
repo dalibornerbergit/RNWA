@@ -18,12 +18,12 @@
 		    </div>
 		   <?php } ?>
 		   <div class="form-group">
-		     <label for="name">Name</label>
+		     <label for="username">Username</label>
 		     <input type="name" 
 		           class="form-control" 
-		           id="name" 
-		           name="name" 
-		           value="<?=$row['name'] ?>" >
+		           id="username" 
+		           name="username" 
+		           value="<?=$row['username'] ?>" >
 		   </div>
 
 		   <div class="form-group">
